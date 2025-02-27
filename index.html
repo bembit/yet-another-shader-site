@@ -8,8 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./raidyshady.js" type="module"></script>
     <style>
+      *, *::after, *::before {
+        margin: 0 0;
+        padding: 0 0;
+        box-sizing: border-box;
+      }
       body { 
-        margin: 0;
+        margin: 0 0;
         overflow: hidden;
         /* background-color: black; */
         font-family: "Urbanist", sans-serif;
@@ -17,6 +22,12 @@
         font-weight: normal;
         font-style: normal;
         color: white
+      }
+      a, a:visited {
+        color: inherit;
+      }
+      ul {
+        list-style: none;
       }
       canvas {
         position: absolute;
@@ -37,6 +48,7 @@
         }
       }
       h2 {
+        /*  */
       }
     </style>
   </head>

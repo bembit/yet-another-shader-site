@@ -2,61 +2,23 @@ import * as THREE from 'https://unpkg.com/three@0.125.1/build/three.module.js';
 
 import { OrbitControls } from 'https://unpkg.com/three@0.125.1/examples/jsm/controls/OrbitControls.js';
 
-{/* <script id="vertexShader" type="x-shader/x-vertex">
-    uniform float time;
-    varying vec3 vNormal;
-    varying vec2 vUv;
-    
-    void main() {
-        vUv = uv;
-        vNormal = normal;
-        
-        // Compute a displacement using a sine function and vertex position
-        float displacement = sin(time + position.x * 2.0) * 0.3;
-        
-        // Offset the vertex along its normal
-        vec3 newPosition = position + normal * displacement;
-        
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-    }
-</script>
-
-<!-- Fragment Shader: colors based on normals -->
-<script id="fragmentShader" type="x-shader/x-fragment">
-    uniform float time;
-    varying vec3 vNormal;
-    varying vec2 vUv;
-    
-    void main() {
-        // Simple shading: color shifts based on vertex normal
-        vec3 color = 0.5 + 0.5 * vNormal;
-        gl_FragColor = vec4(color, 1.0);
-    }
-</script> */}
-
 // GLSL Vertex Shader with mouse interaction
 const vertexShader = `
   uniform float time;
-  uniform vec2 uMouse;
   varying vec3 vNormal;
   varying vec2 vUv;
-
+  
   void main() {
-    vUv = uv;
-    vNormal = normal;
-    
-    // Modify frequency and amplitude based on uMouse values.
-    // uMouse.x and uMouse.y are expected to be in [-1, 1] range.
-    float frequency = 2.0 + (uMouse.x * 5.0);    // Adjust frequency with horizontal movement.
-    float amplitude = 0.3 + (uMouse.y * 0.3);      // Adjust amplitude with vertical movement.
-    
-    // Compute displacement using a sine function
-    float displacement = sin(time + position.x * frequency) * amplitude;
-    
-    // Offset the vertex along its normal
-    vec3 newPosition = position + normal * displacement;
-    
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+      vUv = uv;
+      vNormal = normal;
+      
+      // Compute a displacement using a sine function and vertex position
+      float displacement = sin(time + position.x * 2.0) * 0.3;
+      
+      // Offset the vertex along its normal
+      vec3 newPosition = position + normal * displacement;
+      
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
 `;
 
@@ -67,9 +29,9 @@ const fragmentShader = `
   varying vec2 vUv;
 
   void main() {
-    // Color based on vertex normals
-    vec3 color = 0.5 + 0.5 * vNormal;
-    gl_FragColor = vec4(color, 1.0);
+      // Simple shading: color shifts based on vertex normal
+      vec3 color = 0.5 + 0.5 * vNormal;
+      gl_FragColor = vec4(color, 1.0);
   }
 `;
 
