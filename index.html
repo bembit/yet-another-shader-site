@@ -6,56 +6,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="./raidyshady.js" type="module"></script>
-    <style>
-      *, *::after, *::before {
-        margin: 0 0;
-        padding: 0 0;
-        box-sizing: border-box;
-      }
-      body { 
-        margin: 0 0;
-        overflow: hidden;
-        /* background-color: black; */
-        font-family: "Urbanist", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: normal;
-        font-style: normal;
-        color: white
-      }
-      a, a:visited {
-        color: inherit;
-      }
-      ul {
-        list-style: none;
-      }
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        z-index: -1;
-      }
-      main, header, footer {
-        z-index: 0;
-      }
-      header {
-        display: flex;
-        nav ul {
-          display: flex;
-        }
-      }
-      h2 {
-        /*  */
-      }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- <script src="./raidyshady.js" type="module"></script> -->
+    <script src="./shader2.js" type="module"></script>
   </head>
   <body>
     
     <header>
+      
       <nav>
+        <div class="logo">asd</div>
+
         <ul>
           <li>Home</li>
           <li>About</li>
@@ -63,28 +24,44 @@
           <li>Business</li>
           <li>Cringe</li>
         </ul>
+
+        <div class="stuff">
+          asd asd asd
+        </div>
+
       </nav>
+
     </header>
 
     <main>
 
-      <section class="hero">
-        <!-- split up to 6 sections by industry -->
-        <div class="effects-container">
-          <div class="effect" data-effect="0">Effect 1</div>
-          <div class="effect" data-effect="1">Effect 2</div>
-          <div class="effect" data-effect="2">Effect 3</div>
-          <div class="effect" data-effect="3">Effect 4</div>
-          <div class="effect" data-effect="4">Effect 5</div>
-          <div class="effect" data-effect="5">Effect 6</div>
-        </div>
+      <!-- split up to 6 sections by industry -->
+      <div class="effects-container">
+        <div class="effect" data-effect="0" data-color-test="#ff0000">Finance</div>
+        <div class="effect" data-effect="1" data-color-test="#ff0000">Consulting</div>
+        <div class="effect" data-effect="2" data-color-test="#ff0000">IT</div>
+        <div class="effect" data-effect="3" data-color-test="#ff0000">Logistics</div>
+        <div class="effect" data-effect="4" data-color-test="#ff0000">Manufacturing</div>
+        <div class="effect" data-effect="5" data-color-test="#ff0000">Goverments</div>
+      </div>
+
+      <section class="hero">        
 
         <div class="hero-container">
 
-          <h2>Transforming
-            Businesses
+          <h2>Transforming <br>
+            Businesses <br>
             Like never Before
           </h2>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br> Totam dignissimos illum maiores ducimus nobis consectetur.
+          </p>
+
+          <div>
+            <a href="" class="btn">Learn more</a>
+            <a href="" class="btn">Contact sales</a>
+          </div>
 
         </div>
 
