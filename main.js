@@ -1,52 +1,51 @@
 import * as THREE from 'https://unpkg.com/three@0.125.1/build/three.module.js';
-// import { OrbitControls } from 'https://unpkg.com/three@0.125.1/examples/jsm/controls/OrbitControls.js';
 
 const vertexShader = `
-uniform float time;
-uniform vec2 uMouse;
-uniform int uShape;
-varying vec3 vNormal;
-varying vec2 vUv;
+  uniform float time;
+  uniform vec2 uMouse;
+  uniform int uShape;
+  varying vec3 vNormal;
+  varying vec2 vUv;
 
-void main() {
-  vUv = uv;
-  vNormal = normal;
-  
-  float frequency = 2.0 + (uMouse.x * 5.0);
-  float amplitude = 0.3 + (uMouse.y * 0.3);
-  float displacement = 0.0;
-//   float random = 2.0;
-  
-  // Choose a different displacement formula based on uShape value
-  if(uShape == 0) {
-    displacement = sin(time + position.x * frequency) * amplitude;
-  } else if(uShape == 1) {
-    displacement = cos(time + position.y * frequency) * amplitude;
-    // displacement = cos(time + (position.x * position.y) * frequency) * amplitude;
-  } else if(uShape == 2) {
-    displacement = sin(time + position.z * frequency) * amplitude;
-  } else if(uShape == 3) {
-    displacement = cos(time + (position.x + position.y) * frequency) * amplitude;
-  } else if(uShape == 4) {
-    displacement = sin(time + (position.x - position.y) * frequency) * amplitude;
-  } else if(uShape == 5) {
-    displacement = cos(time + (position.x * position.y) * frequency) * amplitude;
+  void main() {
+    vUv = uv;
+    vNormal = normal;
+    
+    float frequency = 2.0 + (uMouse.x * 5.0);
+    float amplitude = 0.3 + (uMouse.y * 0.3);
+    float displacement = 0.0;
+  //   float random = 2.0;
+    
+    // Choose a different displacement formula based on uShape value
+    if(uShape == 0) {
+      displacement = sin(time + position.x * frequency) * amplitude;
+    } else if(uShape == 1) {
+      displacement = cos(time + position.y * frequency) * amplitude;
+      // displacement = cos(time + (position.x * position.y) * frequency) * amplitude;
+    } else if(uShape == 2) {
+      displacement = sin(time + position.z * frequency) * amplitude;
+    } else if(uShape == 3) {
+      displacement = cos(time + (position.x + position.y) * frequency) * amplitude;
+    } else if(uShape == 4) {
+      displacement = sin(time + (position.x - position.y) * frequency) * amplitude;
+    } else if(uShape == 5) {
+      displacement = cos(time + (position.x * position.y) * frequency) * amplitude;
+    }
+    
+    vec3 newPosition = position + normal * displacement;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
-  
-  vec3 newPosition = position + normal * displacement;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-}
 `;
 
 const fragmentShader = `
-uniform float time;
-varying vec3 vNormal;
-varying vec2 vUv;
+  uniform float time;
+  varying vec3 vNormal;
+  varying vec2 vUv;
 
-void main() {
-  vec3 color = 0.5 + 0.5 * vNormal;
-  gl_FragColor = vec4(color, 1.0);
-}
+  void main() {
+    vec3 color = 0.5 + 0.5 * vNormal;
+    gl_FragColor = vec4(color, 1.0);
+  }
 `;
 
 // Three.js scene setup
@@ -56,21 +55,13 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.z = 3;
 
-// const renderer = new THREE.WebGLRenderer({ antialias: true });
-// renderer.setSize(window.innerWidth, window.innerHeight);
-
-// target the canvas element
+// Target the canvas element
 const canvas = document.getElementById('canvas');
 
-// renderer with the selected canvas
+// Renderer with the selected canvas
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
-
-// const heroContainer = document.querySelector('.hero')
-// heroContainer.appendChild(renderer.domElement);
-
-// document.body.appendChild(renderer.domElement);
 
 // Create sphere geometry and custom ShaderMaterial including uShape
 const geometry = new THREE.SphereGeometry(1, 128, 128);
@@ -80,14 +71,13 @@ const material = new THREE.ShaderMaterial({
   uniforms: {
     time: { value: 0.0 },
     uMouse: { value: new THREE.Vector2(0, 0) },
-    uShape: { value: 0 }  // Default effect
+    uShape: { value: 0 }  // Default effect ( -1 version later )
   }
 });
 
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
-// Animation loop: update time uniform and render
 function animate(timeValue) {
   requestAnimationFrame(animate);
   material.uniforms.time.value = timeValue * 0.001;
@@ -97,19 +87,6 @@ animate();
 
 const canvasElement = document.querySelector('canvas');
 console.log(canvasElement)
-
-// window.addEventListener('resize', () => {
-//   console.log('Before:', renderer.domElement.width, window.innerWidth);
-
-//   const width = window.innerWidth;
-//   const height = window.innerHeight;
-  
-//   renderer.setSize(width, height);
-//   camera.aspect = width / height;
-//   camera.updateProjectionMatrix();
-
-//   console.log('After:', renderer.domElement.width, window.innerWidth);
-// });
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -124,13 +101,13 @@ window.addEventListener('mousemove', (event) => {
   material.uniforms.uMouse.value.set(x, y);
 });
 
-
 document.querySelectorAll('.effect').forEach(div => {
   const divToTarget = document.querySelector('.hover-info-container');
   div.addEventListener('mouseenter', (event) => {
-    // Use a data attribute to determine which effect to show
+
     const effectId = parseInt(event.target.getAttribute('data-effect'), 10);
 
+    // These could be cleaned up
     divToTarget.textContent = event.target.getAttribute('data-description-test');
 
     material.uniforms.uShape.value = effectId;
@@ -138,11 +115,11 @@ document.querySelectorAll('.effect').forEach(div => {
     div.style.backgroundColor = event.target.getAttribute('data-color-test');
     
   });
-  // Optionally, reset the effect when mouse leaves
+
   div.addEventListener('mouseleave', () => {
-    material.uniforms.uShape.value = 0; // Or another default value
+    material.uniforms.uShape.value = 0; // Other -1 value spot
+    // Tests
     div.style.backgroundColor = 'rgba(255, 141, 236, 0.02)';
-    // test
     divToTarget.textContent = '';
   });
 });
