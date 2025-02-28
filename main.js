@@ -83,11 +83,14 @@ function animate(timeValue) {
 }
 animate();
 
+const canvasElement = document.querySelector('canvas');
+console.log(canvasElement)
+
 // Resize listener for responsiveness
 window.addEventListener('resize', () => {
+  renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
 // Update uMouse uniform on mouse movement
@@ -103,7 +106,6 @@ document.querySelectorAll('.effect').forEach(div => {
   div.addEventListener('mouseenter', (event) => {
     // Use a data attribute to determine which effect to show
     const effectId = parseInt(event.target.getAttribute('data-effect'), 10);
-
 
     divToTarget.textContent = event.target.getAttribute('data-description-test');
 
