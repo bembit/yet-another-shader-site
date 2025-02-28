@@ -170,10 +170,6 @@ div.hover-info-container {
 	justify-content: flex-start;
 }
 
-div.hover-info-container h3 {
-
-}
-
 .hero-container > *:not(.btn-container) {
 	margin-bottom: 25px;
 }
