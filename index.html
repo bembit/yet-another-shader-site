@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Morphing GLSL Shader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphing GLSL Shader Landing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<<<<<<< HEAD
     <script src="./raidyshady.js" type="module"></script>
     <style>
       *, *::after, *::before {
@@ -51,46 +53,174 @@
         /*  */
       }
     </style>
+=======
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/df3e6f116a.js" crossorigin="anonymous"></script>
+    <script src="./main.js" type="module"></script>
+>>>>>>> merge-base
   </head>
+
   <body>
+
+    <canvas id="canvas"></canvas>
     
     <header>
+      
       <nav>
+
+        <div class="logo">
+          <img src="./Atlantic-colored.svg" alt="">
+        </div>
+
         <ul>
           <li>Home</li>
           <li>About</li>
           <li>Contact</li>
           <li>Business</li>
-          <li>Cringe</li>
+          <li>Customers</li>
+          <li>Get a quote</li>
         </ul>
+
+        <div class="">
+          <a href="" class="btn gradient-button">Request a demo</a>
+        </div>
+
       </nav>
+
     </header>
 
     <main>
 
-      <section class="hero">
-        <!-- split up to 6 sections by industry -->
-        <div class="effects-container">
-          <div class="effect" data-effect="0">Effect 1</div>
-          <div class="effect" data-effect="1">Effect 2</div>
-          <div class="effect" data-effect="2">Effect 3</div>
-          <div class="effect" data-effect="3">Effect 4</div>
-          <div class="effect" data-effect="4">Effect 5</div>
-          <div class="effect" data-effect="5">Effect 6</div>
-        </div>
+      <!-- split up to 6 sections by industry -->
+      <!-- just generate them with JS instead of applying 65 data attrs.  -->
+
+      <section class="hero">        
 
         <div class="hero-container">
 
-          <h2>Transforming
-            Businesses
-            Like never Before
-          </h2>
+          <div class="hero-headings">
+            <h2>Transforming <br>
+              Businesses like <div class="hover-info-container"><h3>&nbsp;</h3></div><br>
+              <!-- Businesses like <div class="hover-info-container"><h3>Consulting.</h3></div><br> -->
+              never before.
+            </h2>
+            <h3 >
+              <!-- generate with js. -->
+            </h3>
+          </div>
 
+          <p>
+            We are making the world a better place,<br> and enabling businesses to scale endlessly.
+          </p>
+
+          <div class="btn-container">
+            <a href="" class="btn">Learn more</a>
+            <a href="" class="btn gradient-button">Contact sales</a>
+          </div>
+
+        </div>
+
+        <div class="effects-container">
+          <div class="effect" data-effect="0" data-color-test="#e226b9" data-description-test="Finance.">
+            <h4>Finance.</h4>
+            <p>This is a long text describing the feature of whatever, Lorem ipsum dolor sit on this yo, what is this typing all day like a crazy person instead of copy pasting some cool text from AI.</p>
+            <ul>
+              <li><i class="fa-regular fa-envelope"></i> One</li>
+              <li><i class="fa-regular fa-calendar"></i> Two</li>
+              <li><i class="fa-regular fa-font-awesome"></i> Three</li>
+            </ul>
+            <a class="btn">Case studies <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="effect" data-effect="1" data-color-test="#e447c2" data-description-test="Consulting.">
+            <h4>Consulting.</h4>
+            <p>This is a long text describing the feature of whatever, Lorem ipsum dolor sit on this yo, what is this typing all day like a crazy person instead of copy pasting some cool text from AI.</p>
+            <ul>
+              <li><i class="fa-regular fa-envelope"></i> One</li>
+              <li><i class="fa-regular fa-calendar"></i> Two</li>
+              <li><i class="fa-regular fa-font-awesome"></i> Three</li>
+            </ul>
+            <a class="btn">Case studies <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="effect" data-effect="2" data-color-test="#d247e4" data-description-test="IT." >
+            <h4>IT.</h4>
+            <p>This is a long text describing the feature of whatever, Lorem ipsum dolor sit on this yo, what is this typing all day like a crazy person instead of copy pasting some cool text from AI.</p>
+            <ul>
+              <li><i class="fa-regular fa-envelope"></i> One</li>
+              <li><i class="fa-regular fa-calendar"></i> Two</li>
+              <li><i class="fa-regular fa-font-awesome"></i> Three</li>
+            </ul>
+            <a class="btn">Case studies <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="effect" data-effect="3" data-color-test="#dd6fec" data-description-test="Logistics.">
+            <h4>Logistics.</h4>
+            <p>This is a long text describing the feature of whatever, Lorem ipsum dolor sit on this yo, what is this typing all day like a crazy person instead of copy pasting some cool text from AI.</p>
+            <ul>
+              <li><i class="fa-regular fa-envelope"></i> One</li>
+              <li><i class="fa-regular fa-calendar"></i> Two</li>
+              <li><i class="fa-regular fa-font-awesome"></i> Three</li>
+            </ul>
+            <a class="btn">Case studies <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="effect" data-effect="4" data-color-test="#8a39e7" data-description-test="Manufacturing.">
+            <h4>Manufacturing.</h4>
+            <p>This is a long text describing the feature of whatever, Lorem ipsum dolor sit on this yo, what is this typing all day like a crazy person instead of copy pasting some cool text from AI.</p>
+            <ul>
+              <li><i class="fa-regular fa-envelope"></i> One</li>
+              <li><i class="fa-regular fa-calendar"></i> Two</li>
+              <li><i class="fa-regular fa-font-awesome"></i> Three</li>
+            </ul>
+            <a class="btn">Case studies <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="effect" data-effect="5" data-color-test="#a863f7" data-description-test="Goverments.">
+            <h4>Goverments.</h4>
+            <p>This is a long text describing the feature of whatever, Lorem ipsum dolor sit on this yo, what is this typing all day like a crazy person instead of copy pasting some cool text from AI.</p>
+            <ul>
+              <li><i class="fa-regular fa-envelope"></i> One</li>
+              <li><i class="fa-regular fa-calendar"></i> Two</li>
+              <li><i class="fa-regular fa-font-awesome"></i> Three</li>
+            </ul>
+            <a class="btn">Case studies <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
         </div>
 
       </section>
 
       <section class="services">
+        <h2>Hello to cost savings.</h2>
+        <div class="services-container">
+
+          <div class="services-left">
+            <p><span>1.</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <br>
+            <p><span>2.</span>Pariatur repellat velit aut! Sequi totam itaque veritatis harum suscipit voluptates facilis necessitatibus provident, maiores et iste?</p>
+            <br>
+            <p><span>2.</span>Pariatur repellat velit aut! Sequi totam itaque veritatis harum suscipit voluptates facilis necessitatibus provident, maiores et iste?</p>
+          </div>
+
+          <div class="services-right">
+
+            <div class="images">
+              <div>
+                1
+              </div>
+
+              <div>
+                2
+              </div>
+              
+              <div>
+                3
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
 
       </section>
 
