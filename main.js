@@ -56,13 +56,21 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.z = 3;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+// const renderer = new THREE.WebGLRenderer({ antialias: true });
+// renderer.setSize(window.innerWidth, window.innerHeight);
+
+// target the canvas element
+const canvas = document.getElementById('canvas');
+
+// renderer with the selected canvas
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
 
 // const heroContainer = document.querySelector('.hero')
 // heroContainer.appendChild(renderer.domElement);
 
-document.body.appendChild(renderer.domElement);
+// document.body.appendChild(renderer.domElement);
 
 // Create sphere geometry and custom ShaderMaterial including uShape
 const geometry = new THREE.SphereGeometry(1, 128, 128);
@@ -90,7 +98,19 @@ animate();
 const canvasElement = document.querySelector('canvas');
 console.log(canvasElement)
 
-// Resize listener for responsiveness
+// window.addEventListener('resize', () => {
+//   console.log('Before:', renderer.domElement.width, window.innerWidth);
+
+//   const width = window.innerWidth;
+//   const height = window.innerHeight;
+  
+//   renderer.setSize(width, height);
+//   camera.aspect = width / height;
+//   camera.updateProjectionMatrix();
+
+//   console.log('After:', renderer.domElement.width, window.innerWidth);
+// });
+
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
