@@ -58,6 +58,10 @@ camera.position.z = 3;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
+
+// const heroContainer = document.querySelector('.hero')
+// heroContainer.appendChild(renderer.domElement);
+
 document.body.appendChild(renderer.domElement);
 
 // Create sphere geometry and custom ShaderMaterial including uShape
@@ -117,7 +121,7 @@ document.querySelectorAll('.effect').forEach(div => {
   // Optionally, reset the effect when mouse leaves
   div.addEventListener('mouseleave', () => {
     material.uniforms.uShape.value = 0; // Or another default value
-    div.style.backgroundColor = 'rgba(255, 141, 236, 0.1)'
+    div.style.backgroundColor = 'rgba(255, 141, 236, 0.02)';
     // test
     divToTarget.textContent = '';
   });
