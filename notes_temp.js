@@ -1,12 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.125.1/build/three.module.js';
-<<<<<<< HEAD:raidyshady.js
 
-import { OrbitControls } from 'https://unpkg.com/three@0.125.1/examples/jsm/controls/OrbitControls.js';
-=======
-// import { OrbitControls } from 'https://unpkg.com/three@0.125.1/examples/jsm/controls/OrbitControls.js';
->>>>>>> merge-base:temp.js
-
-// GLSL Vertex Shader with mouse interaction
 const vertexShader = `
   uniform float time;
   varying vec3 vNormal;
@@ -26,7 +19,6 @@ const vertexShader = `
   }
 `;
 
-// GLSL Fragment Shader (simple normal-based color)
 const fragmentShader = `
   uniform float time;
   varying vec3 vNormal;
@@ -72,7 +64,7 @@ function createSpotLight() {
 
 }
 
-scene.add(createDirectionalLight());
+// scene.add(createDirectionalLight());
 
 
 const camera = new THREE.PerspectiveCamera(
@@ -85,7 +77,6 @@ renderer.physicallyCorrectLights = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Create a sphere geometry and apply a ShaderMaterial with the custom shaders
 const geometry = new THREE.SphereGeometry(1, 128, 128);
 const material = new THREE.ShaderMaterial({
   vertexShader: vertexShader,

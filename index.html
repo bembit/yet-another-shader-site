@@ -3,61 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morphing GLSL Shader Landing</title>
+    <title>Morphing GLSL Shader Landing Demo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<<<<<<< HEAD
-    <script src="./raidyshady.js" type="module"></script>
-    <style>
-      *, *::after, *::before {
-        margin: 0 0;
-        padding: 0 0;
-        box-sizing: border-box;
-      }
-      body { 
-        margin: 0 0;
-        overflow: hidden;
-        /* background-color: black; */
-        font-family: "Urbanist", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: normal;
-        font-style: normal;
-        color: white
-      }
-      a, a:visited {
-        color: inherit;
-      }
-      ul {
-        list-style: none;
-      }
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        z-index: -1;
-      }
-      main, header, footer {
-        z-index: 0;
-      }
-      header {
-        display: flex;
-        nav ul {
-          display: flex;
-        }
-      }
-      h2 {
-        /*  */
-      }
-    </style>
-=======
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/df3e6f116a.js" crossorigin="anonymous"></script>
     <script src="./main.js" type="module"></script>
->>>>>>> merge-base
   </head>
 
   <body>
@@ -69,7 +21,7 @@
       <nav>
 
         <div class="logo">
-          <img src="./Atlantic-colored.svg" alt="">
+          <img src="./logos/Atlantic-colored.svg" alt="">
         </div>
 
         <ul>
@@ -91,9 +43,6 @@
 
     <main>
 
-      <!-- split up to 6 sections by industry -->
-      <!-- just generate them with JS instead of applying 65 data attrs.  -->
-
       <section class="hero">        
 
         <div class="hero-container">
@@ -101,11 +50,12 @@
           <div class="hero-headings">
             <h2>Transforming <br>
               Businesses like <div class="hover-info-container"><h3>&nbsp;</h3></div><br>
+              <!-- Hover test div -->
               <!-- Businesses like <div class="hover-info-container"><h3>Consulting.</h3></div><br> -->
               never before.
             </h2>
             <h3 >
-              <!-- generate with js. -->
+              <!-- Generate with js. -->
             </h3>
           </div>
 
@@ -120,6 +70,8 @@
 
         </div>
 
+        <!-- Split up to 6 sections by industry -->
+        <!-- Just generate them with JS, instead of applying 65 data attrs.  -->
         <div class="effects-container">
           <div class="effect" data-effect="0" data-color-test="#e226b9" data-description-test="Finance.">
             <h4>Finance.</h4>
@@ -185,12 +137,13 @@
 
       </section>
 
+      <!-- This is where I got bored. -->
       <section class="services">
         <h2>Hello to cost savings.</h2>
         <div class="services-container">
 
           <div class="services-left">
-            <p><span>1.</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <p><span>1.</span>Just here to have some stuff here.</p>
             <br>
             <p><span>2.</span>Pariatur repellat velit aut! Sequi totam itaque veritatis harum suscipit voluptates facilis necessitatibus provident, maiores et iste?</p>
             <br>
@@ -225,6 +178,10 @@
       </section>
 
     </main>
+
+    <footer>
+      by <a href="https://github.com/bembit">bembit</a>, logos from <a href="">logotouse.com/</a> 
+    </footer>
 
   </body>
 </html>
