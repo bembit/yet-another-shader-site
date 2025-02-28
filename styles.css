@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 }
 
+/* main, header - max width 1280px */
+/* body flex center */
+
 body { 
 	margin: 0 0;
 	overflow: hidden;
@@ -43,7 +46,7 @@ header {
 	justify-content: center;
 	
 	nav {
-		width: 1280px;
+		max-width: 1280px;
 		display: flex;
 	}
 
@@ -78,6 +81,14 @@ a.btn {
 	display: inline-block;
 }
 
+a.btn:last-of-type {
+	padding: 8px 16px;
+	background-color: #8a39e7;
+	border: 1px solid white;
+	border-radius: 25px;
+	display: inline-block;
+}
+
 .hero-container {
 	position: absolute;
 	/* top: 50%; */
@@ -85,6 +96,18 @@ a.btn {
 	/* left: 50%; */
 	left: 30%;
 	transform: translate(-50%, -50%);
+	/* height: 100%; */
+	display: flex;
+	flex-direction: column;
+}
+
+.hover-info-container {
+	position: absolute;
+	/* top: 50%; */
+	top: 30%;
+	/* left: 50%; */
+	right: 20%;
+	transform: translateY(-50%);
 	/* height: 100%; */
 	display: flex;
 	flex-direction: column;
@@ -109,5 +132,16 @@ a.btn {
 	background-color: transparent;
 	flex-basis: calc(100% / 6);
 	text-align: center;
-	border: 1px solid white;
+	background-color: rgba(255, 141, 236, 0.1);
+	/* border: 1px solid white; */
+	transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	h4 {
+		margin-top: 25px;
+	}
+
+}
+
+.effects-container div.effect:hover {
+	transform: translateY(-50px);
 }

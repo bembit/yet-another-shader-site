@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <!-- <script src="./raidyshady.js" type="module"></script> -->
-    <script src="./shader2.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
   </head>
   <body>
     
@@ -36,13 +36,14 @@
     <main>
 
       <!-- split up to 6 sections by industry -->
+      <!-- just generate them with JS instead of applying 65 data attrs.  -->
       <div class="effects-container">
-        <div class="effect" data-effect="0" data-color-test="#ff0000">Finance</div>
-        <div class="effect" data-effect="1" data-color-test="#ff0000">Consulting</div>
-        <div class="effect" data-effect="2" data-color-test="#ff0000">IT</div>
-        <div class="effect" data-effect="3" data-color-test="#ff0000">Logistics</div>
-        <div class="effect" data-effect="4" data-color-test="#ff0000">Manufacturing</div>
-        <div class="effect" data-effect="5" data-color-test="#ff0000">Goverments</div>
+        <div class="effect" data-effect="0" data-color-test="#e226b9" data-description-test="Probably not like this."><h4>Finance</h4></div>
+        <div class="effect" data-effect="1" data-color-test="#e447c2" data-description-test="but"><h4>Consulting</h4></div>
+        <div class="effect" data-effect="2" data-color-test="#d247e4" data-description-test="a test"><h4>IT</h4></div>
+        <div class="effect" data-effect="3" data-color-test="#dd6fec" data-description-test="was"><h4>Logistics</h4></div>
+        <div class="effect" data-effect="4" data-color-test="#8a39e7" data-description-test="done"><h4>Manufacturing</h4></div>
+        <div class="effect" data-effect="5" data-color-test="#a863f7" data-description-test="tonight"><h4>Goverments</h4></div>
       </div>
 
       <section class="hero">        
@@ -64,6 +65,10 @@
           </div>
 
         </div>
+
+        <h3 class="hover-info-container">
+          <!-- generate with js. -->
+        </h3>
 
       </section>
 

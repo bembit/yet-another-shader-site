@@ -97,17 +97,26 @@ window.addEventListener('mousemove', (event) => {
   material.uniforms.uMouse.value.set(x, y);
 });
 
+
 document.querySelectorAll('.effect').forEach(div => {
+  const divToTarget = document.querySelector('.hover-info-container');
   div.addEventListener('mouseenter', (event) => {
     // Use a data attribute to determine which effect to show
     const effectId = parseInt(event.target.getAttribute('data-effect'), 10);
+
+
+    divToTarget.textContent = event.target.getAttribute('data-description-test');
+
     material.uniforms.uShape.value = effectId;
 
     div.style.backgroundColor = event.target.getAttribute('data-color-test');
+    
   });
   // Optionally, reset the effect when mouse leaves
   div.addEventListener('mouseleave', () => {
     material.uniforms.uShape.value = 0; // Or another default value
-    div.style.backgroundColor = 'initial';
+    div.style.backgroundColor = 'rgba(255, 141, 236, 0.1)'
+    // test
+    divToTarget.textContent = '';
   });
 });
